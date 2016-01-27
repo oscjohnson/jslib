@@ -5,3 +5,7 @@ Array.prototype.max = function() {
 Array.prototype.min = function() {
   return Math.min.apply(null, this);
 };
+
+Array.prototype.average = function() {
+	return this.reduce(function(a, b) { return a + b; }) / this.length;
+};
