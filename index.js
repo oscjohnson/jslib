@@ -9,3 +9,17 @@ Array.prototype.min = function() {
 Array.prototype.average = function() {
 	return this.reduce(function(a, b) { return a + b; }) / this.length;
 };
+
+Array.prototype.repeat = function (len) {
+  if (this.length !== 1) throw Error("The array can only contain one value")
+
+  function fillArray(value, len) {
+    var arr = [];
+    for (var i = 0; i < len; i++) {
+      arr.push(value);
+    }
+    return arr;
+  }
+  
+  return fillArray(this[0], len)
+}
