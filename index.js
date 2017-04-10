@@ -32,3 +32,11 @@ Object.map = function(o, f, ctx) {
     });
     return result;
 }
+
+Object.prototype.reduce = function( reduceCallback, initialValue ) {
+    var obj = this, keys = Object.keys( obj );
+
+    return keys.reduce( function( prevVal, item, idx, arr ) {
+        return reduceCallback( prevVal, item, obj[item], obj );
+    }, initialValue );
+};
