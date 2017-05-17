@@ -7,7 +7,7 @@ Array.prototype.min = function() {
 };
 
 Array.prototype.average = function() {
-	return this.reduce(function(a, b) { return a + b; }) / this.length;
+  return this.reduce(function(a, b) { return a + b; }) / this.length;
 };
 
 Array.prototype.repeat = function (len) {
@@ -20,8 +20,16 @@ Array.prototype.repeat = function (len) {
     }
     return arr;
   }
-  
+
   return fillArray(this[0], len)
+}
+
+Array.prototype.remove = function (element) {
+  var index = this.indexOf(element);
+  if (index > -1) {
+    this.splice(index, 1);
+  }
+  return this
 }
 
 Object.map = function(o, f, ctx) {
