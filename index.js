@@ -48,3 +48,12 @@ Object.prototype.reduce = function( reduceCallback, initialValue ) {
         return reduceCallback( prevVal, item, obj[item], obj );
     }, initialValue );
 };
+
+
+function timemethod(fn, msg) {
+  var t0 = performance.now();
+  fn();
+  var t1 = performance.now();
+
+  console.log(msg || "", t1 - t0)
+}
