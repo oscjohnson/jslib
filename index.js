@@ -57,3 +57,15 @@ function timemethod(fn, msg) {
 
   console.log(msg || "", t1 - t0)
 }
+
+function and(...args) {
+  for (var i = 0; i < args.length; i++) {
+    if (!args[i]) return false;
+  }
+
+  return true;
+}
+
+function or(...args) {
+  return args.some(x => x)
+}
