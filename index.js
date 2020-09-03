@@ -58,6 +58,20 @@ function timemethod(fn, msg) {
   console.log(msg || "", t1 - t0)
 }
 
+function getParams(url) {
+  var url = (url || window.location.href)
+  var params = url
+    .slice(url.indexOf("?") + 1)
+    .split("&");
+  var result = {};
+  params.forEach(function(item) {
+    var param = item.split("=");
+    result[param[0]] = param[1];
+  });
+  return result;
+}
+
+
 function and(...args) {
   for (var i = 0; i < args.length; i++) {
     if (!args[i]) return false;
